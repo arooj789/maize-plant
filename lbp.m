@@ -11,3 +11,10 @@ I=imread(imds.Files{i});
         F(i,:)=extractLBPFeatures(rgb2gray(I));
     
     end
+% show  the progress
+display(['progress' num2str(i/size(imds.Files,1)*100) '%'])
+ 
+end
+%putting label at the end of features
+    F(:,end+1)=imds.Labels
+
