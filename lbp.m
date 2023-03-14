@@ -18,3 +18,12 @@ end
 %putting label at the end of features
     F(:,end+1)=imds.Labels
 
+% training SVM
+    svmmdl=fitcsvm(F,imds.Labels);
+
+%traing knn
+    knnmdl=fitcknn(F,imds.Labels);
+
+% input=imread(imds.Files{100});
+% x=extractLBPFeatures(rgb2gray(input));
+% prediction=predict(svmmdl,x);
